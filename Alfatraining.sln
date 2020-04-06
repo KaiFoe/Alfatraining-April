@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meine erste App", "Meine erste App\Meine erste App.csproj", "{796D5A5C-848F-4B10-B29A-71FF85CE5D1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMI-Rechner", "BMI-Rechner\BMI-Rechner.csproj", "{34F10EA6-945A-4E49-B48F-D638CC5A6E24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -25,6 +27,14 @@ Global
 		{796D5A5C-848F-4B10-B29A-71FF85CE5D1F}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{796D5A5C-848F-4B10-B29A-71FF85CE5D1F}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{796D5A5C-848F-4B10-B29A-71FF85CE5D1F}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Debug|iPhone.Build.0 = Debug|iPhone
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Release|iPhone.ActiveCfg = Release|iPhone
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Release|iPhone.Build.0 = Release|iPhone
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{34F10EA6-945A-4E49-B48F-D638CC5A6E24}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
