@@ -50,6 +50,14 @@ namespace BMI_Rechner
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISlider sldrWeight { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtHeight { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtWeight { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnSubmit != null) {
@@ -95,6 +103,16 @@ namespace BMI_Rechner
             if (sldrWeight != null) {
                 sldrWeight.Dispose ();
                 sldrWeight = null;
+            }
+
+            if (txtHeight != null) {
+                txtHeight.Dispose ();
+                txtHeight = null;
+            }
+
+            if (txtWeight != null) {
+                txtWeight.Dispose ();
+                txtWeight = null;
             }
         }
     }

@@ -18,66 +18,100 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="220" translatesAutoresizingMaskIntoConstraints="NO" text="My BMI-Calculator" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="220" translatesAutoresizingMaskIntoConstraints="NO" text="My BMI-Calculator" misplaced="YES">
                                 <rect key="frame" x="20" y="58" width="374" height="21"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="221" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Please type weight in kg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="221" translatesAutoresizingMaskIntoConstraints="NO" text="Please type weight in kg" misplaced="YES">
                                 <rect key="frame" x="20" y="120" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="222" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="Please type height in cm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="222" translatesAutoresizingMaskIntoConstraints="NO" text="Please type height in cm" misplaced="YES">
                                 <rect key="frame" x="20" y="220" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" id="223" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" maxValue="250" value="75">
-                                <rect key="frame" x="20" y="157" width="374" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" id="223" translatesAutoresizingMaskIntoConstraints="NO" maxValue="250" value="75" misplaced="YES">
+                                <rect key="frame" x="20" y="157" width="247" height="31"/>
                             </slider>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="175" minValue="0.0" id="224" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" maxValue="250">
-                                <rect key="frame" x="20" y="249" width="374" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="175" minValue="0.0" id="224" translatesAutoresizingMaskIntoConstraints="NO" maxValue="250" misplaced="YES">
+                                <rect key="frame" x="20" y="249" width="247" height="31"/>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="225" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="225" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="20" y="391" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Submit"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="226" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" text="BMI-Output">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="226" translatesAutoresizingMaskIntoConstraints="NO" text="BMI-Output" misplaced="YES">
                                 <rect key="frame" x="20" y="471" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="227" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="227" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="184" y="318" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="228" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="228" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="20" y="323" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="229" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="229" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="256" y="323" width="138" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2364" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="297" y="158" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2365" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="297" y="250" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint id="242" firstItem="220" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50"/>
+                            <constraint id="243" firstItem="220" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="246" firstItem="221" firstAttribute="leading" secondItem="220" secondAttribute="leading"/>
+                            <constraint id="248" firstItem="221" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="253" firstItem="222" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="254" firstItem="222" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="259" firstItem="228" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="263" firstItem="229" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="269" firstItem="225" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="270" firstItem="225" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="272" firstItem="226" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="273" firstItem="226" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="274" firstItem="220" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="275" firstItem="226" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="276" firstItem="221" firstAttribute="top" secondItem="220" secondAttribute="bottom" constant="41"/>
+                            <constraint id="1021" firstItem="223" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2"/>
+                            <constraint id="1022" firstAttribute="trailingMargin" secondItem="223" secondAttribute="trailing" constant="2"/>
+                            <constraint id="1023" firstItem="223" firstAttribute="top" secondItem="221" secondAttribute="centerY" constant="26"/>
+                            <constraint id="1024" firstItem="224" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="2"/>
+                            <constraint id="1025" firstAttribute="trailingMargin" secondItem="224" secondAttribute="trailing" constant="2"/>
+                            <constraint id="1026" firstItem="224" firstAttribute="top" secondItem="222" secondAttribute="centerY" constant="18"/>
+                            <constraint id="1027" firstItem="222" firstAttribute="top" secondItem="223" secondAttribute="bottom" constant="33"/>
+                            <constraint id="1296" firstItem="228" firstAttribute="top" secondItem="224" secondAttribute="bottom" constant="44"/>
+                            <constraint id="1301" firstItem="229" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="1302" firstItem="229" firstAttribute="top" secondItem="224" secondAttribute="bottom" constant="44"/>
+                            <constraint id="1578" firstItem="227" firstAttribute="top" secondItem="224" secondAttribute="bottom" constant="39"/>
+                            <constraint id="1579" firstItem="229" firstAttribute="trailing" secondItem="227" secondAttribute="trailing" constant="161"/>
+                            <constraint id="1580" firstItem="227" firstAttribute="leading" secondItem="228" secondAttribute="leading" constant="164"/>
+                            <constraint id="1853" firstItem="225" firstAttribute="top" secondItem="227" secondAttribute="bottom" constant="42"/>
+                            <constraint id="1854" firstItem="226" firstAttribute="top" secondItem="225" secondAttribute="centerY" constant="65"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblTitle" destination="220" id="name-outlet-220"/>
@@ -89,6 +123,8 @@
                         <outlet property="lblMale" destination="229" id="name-outlet-229"/>
                         <outlet property="btnSubmit" destination="225" id="name-outlet-225"/>
                         <outlet property="lblOutput" destination="226" id="name-outlet-226"/>
+                        <outlet property="txtWeight" destination="2364" id="name-outlet-2364"/>
+                        <outlet property="txtHeight" destination="2365" id="name-outlet-2365"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
