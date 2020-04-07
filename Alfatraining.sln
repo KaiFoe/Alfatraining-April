@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMI-Rechner", "BMI-Rechner\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Farbwechsler", "Farbwechsler\Farbwechsler.csproj", "{622B7562-4120-47AA-B699-DF42776ED630}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -45,6 +47,14 @@ Global
 		{622B7562-4120-47AA-B699-DF42776ED630}.Release|iPhone.Build.0 = Release|iPhone
 		{622B7562-4120-47AA-B699-DF42776ED630}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{622B7562-4120-47AA-B699-DF42776ED630}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Debug|iPhone.Build.0 = Debug|iPhone
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Release|iPhone.ActiveCfg = Release|iPhone
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Release|iPhone.Build.0 = Release|iPhone
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{D5EF3D68-7EAD-4CF8-956F-413DEA1F809B}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
