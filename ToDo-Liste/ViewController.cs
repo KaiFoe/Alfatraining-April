@@ -17,10 +17,10 @@ namespace ToDo_Liste
         }
 
         //ViewDidLoad-Methode (wird beim instanzieren der View aufgerufen)
-        public override void ViewDidLoad ()
+        public override void ViewDidLoad()
         {
-            base.ViewDidLoad ();
-            
+            base.ViewDidLoad();
+
             //Initialisieren der TaskList
             taskList = new List<Task>();
             //Verbinden der TableSource mit unserer TableView "tableTasks"
@@ -36,8 +36,19 @@ namespace ToDo_Liste
             //ausgelagertes TouchUpInside-Event unseres Delete-Buttons
             btnDelete.TouchUpInside += BtnDelete_TouchUpInside;
 
+            //LongPress-Gesture der TableView hinzufügen
+            UILongPressGestureRecognizer longPressGestureRecognizer = new UILongPressGestureRecognizer(LongPress);
+            tableTasks.AddGestureRecognizer(longPressGestureRecognizer);
+
+            //Swipe-Gesture der TableView hinzufügen
+            UISwipeGestureRecognizer leftSwipeGesture = new UISwipeGestureRecognizer(SwipeLeftToRight)
+            {
+                Direction = UISwipeGestureRecognizerDirection.Right
+            };
+            //tableTasks.AddGestureRecognizer(leftSwipeGesture);
         }
 
+        //Tabelle leeren
         private void BtnDelete_TouchUpInside(object sender, EventArgs e)
         {
             //Leere TaskListe
@@ -46,6 +57,7 @@ namespace ToDo_Liste
             tableTasks.ReloadData();
         }
 
+        //Tabelle bearbeiten
         private void BtnEdit_TouchUpInside(object sender, EventArgs e)
         {
             if (tableTasks.Editing)
@@ -69,6 +81,7 @@ namespace ToDo_Liste
             //tableTasks.SetEditing(!tableTasks.Editing, !!tableTasks.Editing)
         }
 
+        //Eintrag hinzufügen
         private void BtnAdd_TouchUpInside(object sender, EventArgs e)
         {
             //Wenn Textfeld nicht leer, dann...
@@ -87,12 +100,7 @@ namespace ToDo_Liste
             tableTasks.ReloadData();
         }
 
-        public override void DidReceiveMemoryWarning ()
-        {
-            base.DidReceiveMemoryWarning ();
-            // Release any cached data, images, etc that aren't in use.
-        }
-
+        //AlertDialog zum hinzufügen von einem Task
         public void alertDialog()
         {
             /* Deprecated Version
@@ -119,7 +127,7 @@ namespace ToDo_Liste
                 "Task hinzufügen",
                 "Bitte Taskbeschreibung angeben",
                 UIAlertControllerStyle.Alert);
-            
+
             //Eingabefeld hinzufügen
             UITextField txtAddTask = null;
             alertController.AddTextField(AddTaskTxt =>
@@ -151,5 +159,78 @@ namespace ToDo_Liste
             PresentViewController(alertController, true, null);
 
         }
+
+        //LongPress-Gesture zum bearbeiten von Tasks
+        private void LongPress(UILongPressGestureRecognizer longPressGestureRecognizer)
+        {
+            if (longPressGestureRecognizer.State == UIGestureRecognizerState.Began)
+            {
+                var point = longPressGestureRecognizer.LocationInView(tableTasks);
+                var indexPath = tableTasks.IndexPathForRowAtPoint(point);
+                EditAlertDialog(indexPath);
+            }
+        }
+
+        //AlertDialog zum Bearbeiten von einem Task
+        private void EditAlertDialog(NSIndexPath indexPath)
+        {
+            Task currentTask = taskList[indexPath.Row];
+            //AlertController anlegen
+            UIAlertController alertController = UIAlertController.Create(
+                "Task bearbeiten",
+                "Bitte Taskbeschreibung ändern",
+                UIAlertControllerStyle.Alert);
+
+            //Eingabefeld hinzufügen
+            UITextField txtEditTask = null;
+            alertController.AddTextField(EditTaskTxt =>
+            {
+                txtEditTask = EditTaskTxt;
+                txtEditTask.Text = currentTask.Name;
+            });
+
+            //OK-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "OK",
+                UIAlertActionStyle.Default,
+                onClick =>
+                {
+                    if (txtEditTask.Text.Length > 0)
+                    {
+                        currentTask.Name = txtEditTask.Text;
+                        taskList[indexPath.Row].Name = currentTask.Name;
+
+                        tableTasks.BeginUpdates();
+                        tableTasks.ReloadRows(tableTasks.IndexPathsForVisibleRows, UITableViewRowAnimation.Automatic);
+                        tableTasks.EndUpdates();
+                    }
+                }));
+            //Cancel-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "Abbrechen",
+                UIAlertActionStyle.Default,
+                null));
+            //PresentViewController aufrufen zur Anzeige des Dialoges
+            PresentViewController(alertController, true, null);
+
+        }
+    
+        private void SwipeLeftToRight(UISwipeGestureRecognizer swipeGestureRecognizer)
+        {
+            var point = swipeGestureRecognizer.LocationInView(tableTasks);
+            var indexPath = tableTasks.IndexPathForRowAtPoint(point);
+
+            taskList.RemoveAt(indexPath.Row);
+            tableTasks.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
+        }
+
+        
+        public override void DidReceiveMemoryWarning ()
+        {
+            base.DidReceiveMemoryWarning ();
+            // Release any cached data, images, etc that aren't in use.
+        }
+
+        
     }
 }

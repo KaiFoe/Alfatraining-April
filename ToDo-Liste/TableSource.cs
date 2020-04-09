@@ -14,6 +14,7 @@ namespace ToDo_Liste
         List<Task> taskList = new List<Task>();
         string cellIdentifier = "TableCell";
         ViewController viewController;
+        bool hasViewedAlert = false;
 
 
         //Konstrutkor mit Übergabe der TaskList aus dem ViewController
@@ -132,6 +133,70 @@ namespace ToDo_Liste
             tableView.DeleteRows(new NSIndexPath[] { NSIndexPath.FromRowSection(tableView.NumberOfRowsInSection(0) - 1, 0) },
                 UITableViewRowAnimation.Fade);
             tableView.EndUpdates();
+        }
+
+        public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
+        {
+            //UIContextualActions
+            var definitionAction = ContextualDefinitionAction(indexPath.Row);
+            var flagAction = ContextualFlagAction(indexPath.Row);
+
+            var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[]
+            {
+                flagAction,
+                definitionAction
+            });
+
+            leadingSwipe.PerformsFirstActionWithFullSwipe = false;
+            return leadingSwipe;
+        }
+
+        public UIContextualAction ContextualFlagAction(int row)
+        {
+            var action = UIContextualAction.FromContextualActionStyle
+                            (UIContextualActionStyle.Normal,
+                                "Flag",
+                                (FlagAction, view, success) => {
+                                    var alertController = UIAlertController.Create($"Report {taskList[row].Name}?", "", UIAlertControllerStyle.Alert);
+                                    alertController.AddAction(UIAlertAction.Create("Cancel", UIAlertActionStyle.Cancel, null));
+                                    alertController.AddAction(UIAlertAction.Create("Yes", UIAlertActionStyle.Destructive, null));
+                                    viewController.PresentViewController(alertController, true, null);
+
+                                    success(true);
+                                });
+
+            //action.Image = UIImage.FromFile("lifecycle.png");
+            action.BackgroundColor = UIColor.Blue;
+
+            return action;
+        }
+
+        public UIContextualAction ContextualDefinitionAction(int row)
+        {
+            string word = taskList[row].Name;
+
+            var action = UIContextualAction.FromContextualActionStyle(UIContextualActionStyle.Normal,
+                                                                "Definition",
+                                                                (ReadLaterAction, view, success) => {
+                                                                    var def = new UIReferenceLibraryViewController(word);
+
+                                                                    var alertController = UIAlertController.Create("No Dictionary Installed", "To install a Dictionary, Select Definition again, click `Manage` on the next screen and select a dictionary to download", UIAlertControllerStyle.Alert);
+                                                                    alertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
+
+                                                                    if (UIReferenceLibraryViewController.DictionaryHasDefinitionForTerm(word) || hasViewedAlert == true)
+                                                                    {
+                                                                        viewController.PresentViewController(def, true, null);
+                                                                        success(true);
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        viewController.PresentViewController(alertController, true, null);
+                                                                        hasViewedAlert = true;
+                                                                        success(false);
+                                                                    }
+                                                                });
+            action.BackgroundColor = UIColor.Orange;
+            return action;
         }
     }
 }
