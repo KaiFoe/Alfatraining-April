@@ -8,7 +8,7 @@ namespace ToDo_Liste
     public partial class ViewController : UIViewController
     {
         //Deklaration der TaskList
-        List<string> taskList { get; set; }
+        List<Task> taskList { get; set; }
 
         //Standardkonstruktor des ViewController
         public ViewController (IntPtr handle) : base (handle)
@@ -21,11 +21,9 @@ namespace ToDo_Liste
             base.ViewDidLoad ();
             
             //Initialisieren der TaskList
-            taskList = new List<string>();
+            taskList = new List<Task>();
             //Verbinden der TableSource mit unserer TableView "tableTasks"
             tableTasks.Source = new TableSource(taskList);
-            //Hinzufügen der TableView "tableTasks" zu unserer View
-            Add(tableTasks);
 
             //ausgelagertes TouchUpInside-Event unseres Add-Buttons 
             btnAdd.TouchUpInside += BtnAdd_TouchUpInside;
@@ -37,8 +35,10 @@ namespace ToDo_Liste
             //Wenn Textfeld nicht leer, dann...
             if (!String.IsNullOrWhiteSpace(txtInputTask.Text))
             {
-                //... füge Task der Liste hinzu
-                taskList.Add(txtInputTask.Text);
+                //...lege neues Task-Objekt an
+                Task newTask = new Task(txtInputTask.Text);
+                //... füge Task-Objekt der Liste hinzu
+                taskList.Add(newTask);
                 //...leere Textfeld
                 txtInputTask.Text = "";
             }

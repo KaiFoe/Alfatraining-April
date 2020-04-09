@@ -33,15 +33,16 @@
                                 </prototypes>
                             </tableView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="223" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" placeholder="Bitte Task-Titel angeben">
-                                <rect key="frame" x="20" y="81" width="300" height="30"/>
+                                <rect key="frame" x="20" y="81" width="186" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="224" translatesAutoresizingMaskIntoConstraints="NO">
-                                <rect key="frame" x="348" y="71" width="50" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25" weight="heavy"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="224" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="223" y="71" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20" weight="heavy"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor" colorSpace="custom" customColorSpace="sRGB" red="0.686274509803922" green="0.32156862745098" blue="0.870588235294118" alpha="1"/>
-                                <state key="normal" title="+">
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" catalog="system" image="plus">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -50,8 +51,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <constraints>
-                                    <constraint id="229" firstAttribute="width" constant="50"/>
-                                    <constraint id="230" firstAttribute="height" constant="50"/>
+                                    <constraint id="3441" firstAttribute="height" constant="50"/>
+                                    <constraint id="3442" firstAttribute="width" constant="50"/>
                                 </constraints>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kai's ToDo-Liste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="668" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
@@ -61,13 +62,46 @@
                                 <color key="shadowColor" systemColor="systemPurpleColor" colorSpace="custom" customColorSpace="sRGB" red="0.686274509803922" green="0.32156862745098" blue="0.870588235294118" alpha="1"/>
                                 <size key="shadowOffset" width="2" height="-2"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3437" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="344" y="71" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20" weight="heavy"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" colorSpace="custom" customColorSpace="sRGB" red="0.686274509803922" green="0.32156862745098" blue="0.870588235294118" alpha="1"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" catalog="system" image="trash">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint id="3448" firstAttribute="width" constant="50"/>
+                                    <constraint id="3449" firstAttribute="height" constant="50"/>
+                                </constraints>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3438" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="282" y="71" width="50" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20" weight="heavy"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor" colorSpace="custom" customColorSpace="sRGB" red="0.686274509803922" green="0.32156862745098" blue="0.870588235294118" alpha="1"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" catalog="system" image="pencil">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                        <real key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <constraints>
+                                    <constraint id="3445" firstAttribute="height" constant="50"/>
+                                    <constraint id="3446" firstAttribute="width" constant="50"/>
+                                </constraints>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="225" firstItem="223" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
                             <constraint id="226" firstItem="223" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60"/>
-                            <constraint id="228" firstItem="224" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="4"/>
-                            <constraint id="231" firstItem="224" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51"/>
-                            <constraint id="232" firstItem="224" firstAttribute="leading" secondItem="223" secondAttribute="trailing" constant="28"/>
                             <constraint id="233" firstItem="220" firstAttribute="top" secondItem="223" secondAttribute="bottom" constant="26"/>
                             <constraint id="234" firstItem="220" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
                             <constraint id="235" firstItem="220" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
@@ -75,6 +109,12 @@
                             <constraint id="670" firstItem="668" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16"/>
                             <constraint id="671" firstItem="668" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
                             <constraint id="672" firstItem="668" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="3439" firstItem="224" firstAttribute="leading" secondItem="223" secondAttribute="trailing" constant="17"/>
+                            <constraint id="3440" firstItem="668" firstAttribute="bottom" secondItem="224" secondAttribute="top" constant="2"/>
+                            <constraint id="3443" firstItem="3438" firstAttribute="leading" secondItem="224" secondAttribute="trailing" constant="9"/>
+                            <constraint id="3444" firstItem="668" firstAttribute="bottom" secondItem="3438" secondAttribute="top" constant="2"/>
+                            <constraint id="3447" firstItem="3437" firstAttribute="leading" secondItem="3438" secondAttribute="trailing" constant="12"/>
+                            <constraint id="3450" firstItem="668" firstAttribute="bottom" secondItem="3437" secondAttribute="top" constant="2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -82,6 +122,8 @@
                         <outlet property="btnAdd" destination="224" id="name-outlet-224"/>
                         <outlet property="lblTitle" destination="668" id="name-outlet-668"/>
                         <outlet property="tableTasks" destination="220" id="name-outlet-220"/>
+                        <outlet property="btnDelete" destination="3437" id="name-outlet-3437"/>
+                        <outlet property="btnEdit" destination="3438" id="name-outlet-3438"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -89,4 +131,9 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" catalog="system"/>
+        <image name="trash" catalog="system"/>
+        <image name="pencil" catalog="system"/>
+    </resources>
 </document>

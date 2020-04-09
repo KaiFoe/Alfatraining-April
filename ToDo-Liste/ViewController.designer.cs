@@ -20,6 +20,14 @@ namespace ToDo_Liste
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnDelete { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnEdit { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblTitle { get; set; }
 
         [Outlet]
@@ -35,6 +43,16 @@ namespace ToDo_Liste
             if (btnAdd != null) {
                 btnAdd.Dispose ();
                 btnAdd = null;
+            }
+
+            if (btnDelete != null) {
+                btnDelete.Dispose ();
+                btnDelete = null;
+            }
+
+            if (btnEdit != null) {
+                btnEdit.Dispose ();
+                btnEdit = null;
             }
 
             if (lblTitle != null) {

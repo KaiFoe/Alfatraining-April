@@ -11,12 +11,12 @@ namespace ToDo_Liste
     class TableSource : UITableViewSource
     {
         //Deklaration und Initialisierung der benötigten Felder
-        List<string> taskList = new List<string>();
+        List<Task> taskList = new List<Task>();
         string cellIdentifier = "TableCell";
 
 
         //Konstrutkor mit Übergabe der TaskList aus dem ViewController
-        public TableSource(List<string> taskList)
+        public TableSource(List<Task> taskList)
         {
             //Übergabe der TaskList aus dem ViewController an unsere eigene TaskList
             this.taskList = taskList;
@@ -37,7 +37,7 @@ namespace ToDo_Liste
                 cell = new UITableViewCell(UITableViewCellStyle.Default, cellIdentifier);
             }
             //Wir holen uns das entsprechende Item aus der TaskList und schreiben es in die Zelle
-            cell.TextLabel.Text = taskList[rowIndex];
+            cell.TextLabel.Text = taskList[rowIndex].Name;
             //Wir ändern die Textfarbe
             cell.TextLabel.TextColor = UIColor.FromRGB(128, 0, 128);
             //wir ändern die Schriftart und -größe
