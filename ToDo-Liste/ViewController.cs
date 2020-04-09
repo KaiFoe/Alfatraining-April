@@ -27,8 +27,40 @@ namespace ToDo_Liste
 
             //ausgelagertes TouchUpInside-Event unseres Add-Buttons 
             btnAdd.TouchUpInside += BtnAdd_TouchUpInside;
+
+            //ausgelagertes TouchUpInside-Event unseres Edit-Buttons
+            btnEdit.TouchUpInside += BtnEdit_TouchUpInside;
+
+            //ausgelagertes TouchUpInside-Event unseres Delete-Buttons
+            btnDelete.TouchUpInside += BtnDelete_TouchUpInside;
+
         }
 
+        private void BtnDelete_TouchUpInside(object sender, EventArgs e)
+        {
+            //Leere TaskListe
+            taskList.Clear();
+            //Aktualisiere TableView
+            tableTasks.ReloadData();
+        }
+
+        private void BtnEdit_TouchUpInside(object sender, EventArgs e)
+        {
+            if (tableTasks.Editing)
+            {
+                //Bearbeitungsmodus abschalten
+                tableTasks.SetEditing(false, false);
+            }
+            else
+            {
+                //Bearbeitungsmodus einschalten
+                tableTasks.SetEditing(true, true);
+            }
+
+
+            //Vereinfachte/Verkürzte Schreibweise
+            //tableTasks.SetEditing(!tableTasks.Editing, !!tableTasks.Editing)
+        }
 
         private void BtnAdd_TouchUpInside(object sender, EventArgs e)
         {

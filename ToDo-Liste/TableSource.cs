@@ -51,5 +51,22 @@ namespace ToDo_Liste
         {
             return taskList.Count;
         }
+
+        public override bool CanEditRow(UITableView tableView, NSIndexPath indexPath)
+        {
+            //Erlaube Editieren der TableView-Rows
+            return true;
+        }
+
+        public override void CommitEditingStyle(UITableView tableView, UITableViewCellEditingStyle editingStyle, NSIndexPath indexPath)
+        {
+            switch (editingStyle)
+            {
+                case UITableViewCellEditingStyle.Delete:
+                    taskList.RemoveAt(indexPath.Row);
+                    tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
+                    break;
+            }
+        }
     }
 }
