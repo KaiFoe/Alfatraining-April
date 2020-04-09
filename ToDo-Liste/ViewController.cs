@@ -9,6 +9,7 @@ namespace ToDo_Liste
     {
         //Deklaration der TaskList
         List<Task> taskList { get; set; }
+        TableSource tableSource;
 
         //Standardkonstruktor des ViewController
         public ViewController (IntPtr handle) : base (handle)
@@ -23,7 +24,8 @@ namespace ToDo_Liste
             //Initialisieren der TaskList
             taskList = new List<Task>();
             //Verbinden der TableSource mit unserer TableView "tableTasks"
-            tableTasks.Source = new TableSource(taskList);
+            tableSource = new TableSource(this, taskList);
+            tableTasks.Source = tableSource;
 
             //ausgelagertes TouchUpInside-Event unseres Add-Buttons 
             btnAdd.TouchUpInside += BtnAdd_TouchUpInside;
@@ -50,11 +52,16 @@ namespace ToDo_Liste
             {
                 //Bearbeitungsmodus abschalten
                 tableTasks.SetEditing(false, false);
+                tableSource.DidFinishTableEditing(tableTasks);
+                btnAdd.Enabled = true;
             }
             else
             {
                 //Bearbeitungsmodus einschalten
+                tableSource.WillBeginTableEditing(tableTasks);
                 tableTasks.SetEditing(true, true);
+                btnAdd.Enabled = false;
+
             }
 
 
@@ -84,6 +91,65 @@ namespace ToDo_Liste
         {
             base.DidReceiveMemoryWarning ();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        public void alertDialog()
+        {
+            /* Deprecated Version
+            UIAlertView alertView = new UIAlertView();
+            alertView.AlertViewStyle = UIAlertViewStyle.PlainTextInput;
+            alertView.Title = "Neuen Task anlegen";
+            alertView.Message = "Bitte Taskbeschreibung angeben";
+            alertView.AddButton("Abbrechen");
+            alertView.AddButton("OK");
+            alertView.Show();
+
+            alertView.Clicked += (object sender, UIButtonEventArgs args) =>
+            {
+                if (args.ButtonIndex == 1 && alertView.GetTextField(0).Text.Length > 0)
+                {
+                    taskList.RemoveAt(taskList.Count-1);
+                    taskList.Add(new Task(alertView.GetTextField(0).Text));
+                    taskList.Add(new Task("(add new)"));
+                    tableTasks.ReloadData();
+                }
+            };*/
+            //AlertController anlegen
+            UIAlertController alertController = UIAlertController.Create(
+                "Task hinzufügen",
+                "Bitte Taskbeschreibung angeben",
+                UIAlertControllerStyle.Alert);
+            
+            //Eingabefeld hinzufügen
+            UITextField txtAddTask = null;
+            alertController.AddTextField(AddTaskTxt =>
+            {
+                txtAddTask = AddTaskTxt;
+                txtAddTask.Placeholder = "Hier Taskbechreibung einfügen";
+            });
+
+            //OK-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "OK",
+                UIAlertActionStyle.Default,
+                onClick =>
+                {
+                    if (txtAddTask.Text.Length > 0)
+                    {
+                        taskList.RemoveAt(taskList.Count - 1);
+                        taskList.Add(new Task(txtAddTask.Text));
+                        taskList.Add(new Task("(add new)"));
+                        tableTasks.ReloadData();
+                    }
+                }));
+            //Cancel-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "Abbrechen",
+                UIAlertActionStyle.Default,
+                null));
+            //PresentViewController aufrufen zur Anzeige des Dialoges
+            PresentViewController(alertController, true, null);
+
         }
     }
 }
