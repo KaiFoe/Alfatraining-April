@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneTranslator", "PhoneTranslator\PhoneTranslator.csproj", "{B8FFFB60-64FE-439F-8240-4B82CB936B7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-Liste", "ToDo-Liste\ToDo-Liste.csproj", "{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -65,6 +67,14 @@ Global
 		{B8FFFB60-64FE-439F-8240-4B82CB936B7D}.Release|iPhone.Build.0 = Release|iPhone
 		{B8FFFB60-64FE-439F-8240-4B82CB936B7D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{B8FFFB60-64FE-439F-8240-4B82CB936B7D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Debug|iPhone.Build.0 = Debug|iPhone
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Release|iPhone.ActiveCfg = Release|iPhone
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Release|iPhone.Build.0 = Release|iPhone
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{8E5E5721-34BE-4C1F-866C-C2CD2D6E32E7}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
