@@ -43,9 +43,9 @@ namespace ToDo_Liste
             //Swipe-Gesture der TableView hinzufügen
             UISwipeGestureRecognizer leftSwipeGesture = new UISwipeGestureRecognizer(SwipeLeftToRight)
             {
-                Direction = UISwipeGestureRecognizerDirection.Right
+                Direction = UISwipeGestureRecognizerDirection.Left
             };
-            //tableTasks.AddGestureRecognizer(leftSwipeGesture);
+            tableTasks.AddGestureRecognizer(leftSwipeGesture);
         }
 
         //Tabelle leeren
