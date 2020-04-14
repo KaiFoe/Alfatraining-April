@@ -35,6 +35,10 @@ namespace ToDoListe_NavBar
             UIBarButtonItem[] buttons = new UIBarButtonItem[] { barbtnAdd, barbtnDelete };
             //Navigationsitems der NavBar hinzufügen
             NavigationItem.SetRightBarButtonItems(buttons, true);
+
+            //LongPress-Gesture zum Editieren des TaskItems
+            UILongPressGestureRecognizer longPressGestureRecognizer = new UILongPressGestureRecognizer(LongPress);
+            tableTasks.AddGestureRecognizer(longPressGestureRecognizer);
         }
 
         public void deleteAll(object sender, EventArgs args)
@@ -79,6 +83,61 @@ namespace ToDoListe_NavBar
                 null));
             //PresentViewController aufrufen zur Anzeige des Dialoges
             PresentViewController(alertController, true, null);
+        }
+
+        //LongPress-Gesture zum bearbeiten von Tasks
+        private void LongPress(UILongPressGestureRecognizer longPressGestureRecognizer)
+        {
+            if (longPressGestureRecognizer.State == UIGestureRecognizerState.Began)
+            {
+                var point = longPressGestureRecognizer.LocationInView(tableTasks);
+                var indexPath = tableTasks.IndexPathForRowAtPoint(point);
+                EditItemDialog(indexPath);
+            }
+        }
+
+        //AlertDialog zum Bearbeiten von einem Task
+        private void EditItemDialog(NSIndexPath indexPath)
+        {
+            Task currentTask = taskList[indexPath.Row];
+            //AlertController anlegen
+            UIAlertController alertController = UIAlertController.Create(
+                "Task bearbeiten",
+                "Bitte Taskbeschreibung ändern",
+                UIAlertControllerStyle.Alert);
+
+            //Eingabefeld hinzufügen
+            UITextField txtEditTask = null;
+            alertController.AddTextField(EditTaskTxt =>
+            {
+                txtEditTask = EditTaskTxt;
+                txtEditTask.Text = currentTask.Name;
+            });
+
+            //OK-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "OK",
+                UIAlertActionStyle.Default,
+                onClick =>
+                {
+                    if (txtEditTask.Text.Length > 0)
+                    {
+                        currentTask.Name = txtEditTask.Text;
+                        taskList[indexPath.Row].Name = currentTask.Name;
+
+                        tableTasks.BeginUpdates();
+                        tableTasks.ReloadRows(tableTasks.IndexPathsForVisibleRows, UITableViewRowAnimation.Automatic);
+                        tableTasks.EndUpdates();
+                    }
+                }));
+            //Cancel-Button hinzufügen
+            alertController.AddAction(UIAlertAction.Create(
+                "Abbrechen",
+                UIAlertActionStyle.Default,
+                null));
+            //PresentViewController aufrufen zur Anzeige des Dialoges
+            PresentViewController(alertController, true, null);
+
         }
     }
 }

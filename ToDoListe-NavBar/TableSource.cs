@@ -68,5 +68,82 @@ namespace ToDoListe_NavBar
             return taskList.Count;
         }
 
+        //ContextualAction zum Löschen des TaskItems
+        public UIContextualAction contextualDeleteAction(NSIndexPath indexPath, UITableView tableView)
+        {
+            var action = UIContextualAction.FromContextualActionStyle(UIContextualActionStyle.Normal,
+                "Delete Task",
+                (UIContextualAction DeleteItem, UIView view, UIContextualActionCompletionHandler success) => {
+                    var alertController = UIAlertController.Create("Lösche Task?", "Möchten Sie den Task löschen?", UIAlertControllerStyle.Alert);
+                    alertController.AddAction(UIAlertAction.Create("Abbrechen", UIAlertActionStyle.Cancel, null));
+                    alertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, onClick =>
+                    {
+                        tableView.BeginUpdates();
+                        taskList.RemoveAt(indexPath.Row);
+                        tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
+                        tableView.EndUpdates();
+                    }));
+                    taskListController.PresentViewController(alertController, true, null);
+                    success(true);
+            });
+            return action;
+        }
+
+        //ContextualAction zum Bearbeiten des TaskItems
+        public UIContextualAction contextualEditAction(int row, UITableView tableView)
+        {
+            var action = UIContextualAction.FromContextualActionStyle(UIContextualActionStyle.Normal,
+                "Edit",
+                (UIContextualAction EditItem, UIView view, UIContextualActionCompletionHandler success) =>
+                {
+                    var alertController = UIAlertController.Create("Editiere Task", "Bitte neue Taskbeschreibung angeben", UIAlertControllerStyle.Alert);
+
+                    UITextField EditTask = null;
+                    alertController.AddTextField(EditTaskTxt =>
+                   {
+                       EditTask = EditTaskTxt;
+                       EditTask.Text = taskList[row].Name;
+                   });
+                    alertController.AddAction(UIAlertAction.Create("OK",
+                        UIAlertActionStyle.Default,
+                        onClick =>
+                        {
+                            taskList[row].Name = EditTask.Text;
+                            tableView.BeginUpdates();
+                            tableView.ReloadRows(tableView.IndexPathsForVisibleRows, UITableViewRowAnimation.Automatic);
+                            tableView.EndUpdates();
+                        }));
+                    alertController.AddAction(UIAlertAction.Create("Abbrechen",
+                        UIAlertActionStyle.Default,
+                        onClick =>
+                        {
+                        }));
+                    taskListController.PresentViewController(alertController, true, null);
+                    success(true);
+                });
+            return action;
+        }
+
+        public override UISwipeActionsConfiguration GetLeadingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
+        {
+            var editAction = contextualEditAction(indexPath.Row, tableView);
+            var deleteAction = contextualDeleteAction(indexPath, tableView);
+
+            var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { editAction, deleteAction });
+            leadingSwipe.PerformsFirstActionWithFullSwipe = false;
+            
+            return leadingSwipe;
+        }
+
+        public override UISwipeActionsConfiguration GetTrailingSwipeActionsConfiguration(UITableView tableView, NSIndexPath indexPath)
+        {
+            var editAction = contextualEditAction(indexPath.Row, tableView);
+            var deleteAction = contextualDeleteAction(indexPath, tableView);
+
+            var leadingSwipe = UISwipeActionsConfiguration.FromActions(new UIContextualAction[] { editAction, deleteAction });
+            leadingSwipe.PerformsFirstActionWithFullSwipe = false;
+
+            return leadingSwipe;
+        }
     }
 }
