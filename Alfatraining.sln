@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDo-Liste", "ToDo-Liste\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListe-NavBar", "ToDoListe-NavBar\ToDoListe-NavBar.csproj", "{375BDA89-14E5-4727-8FE0-DCFB240017AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personenverwaltung", "Personenverwaltung\Personenverwaltung.csproj", "{8D90D808-5FBE-489E-935A-D7EE2D32F007}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -85,6 +87,14 @@ Global
 		{375BDA89-14E5-4727-8FE0-DCFB240017AE}.Release|iPhone.Build.0 = Release|iPhone
 		{375BDA89-14E5-4727-8FE0-DCFB240017AE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{375BDA89-14E5-4727-8FE0-DCFB240017AE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Debug|iPhone.Build.0 = Debug|iPhone
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Release|iPhone.ActiveCfg = Release|iPhone
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Release|iPhone.Build.0 = Release|iPhone
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{8D90D808-5FBE-489E-935A-D7EE2D32F007}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
