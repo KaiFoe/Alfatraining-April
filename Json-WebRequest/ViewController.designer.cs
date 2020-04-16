@@ -16,40 +16,22 @@ namespace Json_WebRequest
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnSubmit { get; set; }
+        UIKit.UILabel lblAutor { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblInputRXCUI { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel lblOutput { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField txtInputRXCUI { get; set; }
+        UIKit.UILabel lblZitat { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
-            if (btnSubmit != null) {
-                btnSubmit.Dispose ();
-                btnSubmit = null;
+            if (lblAutor != null) {
+                lblAutor.Dispose ();
+                lblAutor = null;
             }
 
-            if (lblInputRXCUI != null) {
-                lblInputRXCUI.Dispose ();
-                lblInputRXCUI = null;
-            }
-
-            if (lblOutput != null) {
-                lblOutput.Dispose ();
-                lblOutput = null;
-            }
-
-            if (txtInputRXCUI != null) {
-                txtInputRXCUI.Dispose ();
-                txtInputRXCUI = null;
+            if (lblZitat != null) {
+                lblZitat.Dispose ();
+                lblZitat = null;
             }
         }
     }

@@ -1,0 +1,17 @@
+﻿[
+    {
+        "brandName": "",
+        "displayName": "Acetaminophen (Oral Pill)",
+        "synonym": "APAP",
+        "fullName": "Acetaminophen 500 MG Oral Tablet",
+        "fullGenericName": "Acetaminophen 500 MG Oral Tablet",
+        "strength": "500 mg",
+        "rxtermsDoseForm": "Tab",
+        "route": "Oral Pill",
+        "termType": "SCD",
+        "rxcui": "198440",
+        "genericRxcui": "0",
+        "rxnormDoseForm": "Oral Tablet",
+        "suppress": ""
+    }
+]

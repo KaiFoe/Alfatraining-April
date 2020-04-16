@@ -116,9 +116,7 @@
       <Visible>false</Visible>
     </ImageAsset>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
@@ -130,7 +128,15 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <None Include="Resources\RxTerm.json" />
+    <Compile Include="Quote.cs" />
+    <Compile Include="QuotesViewController.cs" />
+    <Compile Include="QuotesViewController.designer.cs">
+      <DependentUpon>QuotesViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RXTerm.cs" />
     <Compile Include="SceneDelegate.cs" />
+    <Compile Include="TableSource.cs" />
     <Compile Include="ViewController.cs" />
     <Compile Include="ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
