@@ -4,9 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Xml;
+
 using Foundation;
 using Newtonsoft.Json;
+
 using Newtonsoft.Json.Linq;
 using UIKit;
 
@@ -74,6 +75,25 @@ namespace Json_WebRequest
                 foreach (var cc in AllChildren(c))
                     yield return cc;
             }
+        }
+
+        public void writeQuotesToJson(List<Quote> quotesList)
+        {
+            //TaskListe in Json-String formatieren
+            string json = JsonConvert.SerializeObject(quotesList, Formatting.Indented);
+            //Dateipfad und -name festlegen
+            var saveFile = Path.Combine(Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments), "Quotes.json");
+            
+            //DEBUG-Ausgabe
+            Console.WriteLine(saveFile);
+            
+            //Streamwriter um json-String in Datei zu schreiben
+            using (var writer = File.CreateText(saveFile))
+            {
+                writer.Write(json);
+            }
+
+            File.WriteAllText(saveFile, json);
         }
     }
 }

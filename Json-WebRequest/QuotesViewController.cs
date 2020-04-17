@@ -32,8 +32,13 @@ namespace Json_WebRequest
 
             UIBarButtonItem btnCount = new UIBarButtonItem(UIImage.FromBundle("gear.png"), UIBarButtonItemStyle.Plain, countDialog);
             
+            UIBarButtonItem btnSave = new UIBarButtonItem(UIBarButtonSystemItem.Save, (sender, args) =>
+            {
+                myrequest.writeQuotesToJson(quotesList);
+            });
+
             btnCount.Image = UIImage.FromBundle("gear.png");
-            UIBarButtonItem[] buttons = new UIBarButtonItem[] { btnRefresh, btnCount };
+            UIBarButtonItem[] buttons = new UIBarButtonItem[] { btnRefresh, btnCount, btnSave };
             //Navigationsitems der NavBar hinzufügen
             NavigationItem.SetRightBarButtonItems(buttons, true);
         }
