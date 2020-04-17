@@ -14,6 +14,7 @@ namespace ToDoListe_NavBar
         List<Task> taskList = new List<Task>();
         string cellIdentifier = "TableCell";
         TaskListController taskListController;
+        DBHelper dbHelper = new DBHelper();
 
 
         //Konstrutkor mit Übergabe der TaskList aus dem ViewController
@@ -68,6 +69,14 @@ namespace ToDoListe_NavBar
             return taskList.Count;
         }
 
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            Task currentTask = taskList[indexPath.Row];
+            currentTask.IsDone = !currentTask.IsDone;
+            tableView.ReloadData();
+            dbHelper.updateTask(currentTask);
+        }
+
         //ContextualAction zum Löschen des TaskItems
         public UIContextualAction contextualDeleteAction(NSIndexPath indexPath, UITableView tableView)
         {
@@ -78,10 +87,15 @@ namespace ToDoListe_NavBar
                     alertController.AddAction(UIAlertAction.Create("Abbrechen", UIAlertActionStyle.Cancel, null));
                     alertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, onClick =>
                     {
+                        Task currentTask = taskList[indexPath.Row];
+                        
                         tableView.BeginUpdates();
                         taskList.RemoveAt(indexPath.Row);
                         tableView.DeleteRows(new NSIndexPath[] { indexPath }, UITableViewRowAnimation.Fade);
                         tableView.EndUpdates();
+
+                        dbHelper.deleteTask(currentTask);
+
                     }));
                     taskListController.PresentViewController(alertController, true, null);
                     success(true);
@@ -99,6 +113,7 @@ namespace ToDoListe_NavBar
                     var alertController = UIAlertController.Create("Editiere Task", "Bitte neue Taskbeschreibung angeben", UIAlertControllerStyle.Alert);
 
                     UITextField EditTask = null;
+                    
                     alertController.AddTextField(EditTaskTxt =>
                    {
                        EditTask = EditTaskTxt;
@@ -109,9 +124,13 @@ namespace ToDoListe_NavBar
                         onClick =>
                         {
                             taskList[row].Name = EditTask.Text;
+                            //View-Aktualisierung
                             tableView.BeginUpdates();
                             tableView.ReloadRows(tableView.IndexPathsForVisibleRows, UITableViewRowAnimation.Automatic);
                             tableView.EndUpdates();
+
+                            //DB-Aktualisierung
+                            dbHelper.updateTask(taskList[row]);
                         }));
                     alertController.AddAction(UIAlertAction.Create("Abbrechen",
                         UIAlertActionStyle.Default,

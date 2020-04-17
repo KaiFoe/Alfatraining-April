@@ -10,6 +10,7 @@ namespace ToDoListe_NavBar
         //Variablendeklaration
         TableSource tableSource;
         List<Task> taskList = new List<Task>();
+        DBHelper dbHelper = new DBHelper();
 
         public TaskListController (IntPtr handle) : base (handle)
         {
@@ -18,6 +19,12 @@ namespace ToDoListe_NavBar
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            //Erstelle DB falls noch nicht vorhanden
+            dbHelper.CreateDB();
+
+            //Holle alle Tasks aus DB
+            taskList = dbHelper.getAllTask();
 
             //TableSource verbinden
             tableTasks.Source = new TableSource(this, taskList);
@@ -43,7 +50,11 @@ namespace ToDoListe_NavBar
 
         public void deleteAll(object sender, EventArgs args)
         {
+            //Alle Einträge in DB löschen
+            dbHelper.deleteAllTasks();
+            //Tasklist leeren
             taskList.Clear();
+            //TableView neu laden
             tableTasks.ReloadData();
         }
 
@@ -74,6 +85,7 @@ namespace ToDoListe_NavBar
                     {
                         taskList.Add(new Task(txtAddTask.Text));
                         tableTasks.ReloadData();
+                        dbHelper.addTask(new Task(txtAddTask.Text));
                     }
                 }));
             //Cancel-Button hinzufügen
@@ -125,6 +137,7 @@ namespace ToDoListe_NavBar
                         currentTask.Name = txtEditTask.Text;
                         taskList[indexPath.Row].Name = currentTask.Name;
 
+                        dbHelper.updateTask(currentTask);
                         tableTasks.BeginUpdates();
                         tableTasks.ReloadRows(tableTasks.IndexPathsForVisibleRows, UITableViewRowAnimation.Automatic);
                         tableTasks.EndUpdates();
