@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waehrungsrechner", "Waehrun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drawing", "Drawing\Drawing.csproj", "{50C7774A-C138-49B7-93CA-0F9068AAC496}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragDrop", "DragDrop\DragDrop.csproj", "{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -145,6 +147,14 @@ Global
 		{50C7774A-C138-49B7-93CA-0F9068AAC496}.Release|iPhone.Build.0 = Release|iPhone
 		{50C7774A-C138-49B7-93CA-0F9068AAC496}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{50C7774A-C138-49B7-93CA-0F9068AAC496}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Debug|iPhone.Build.0 = Debug|iPhone
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Release|iPhone.ActiveCfg = Release|iPhone
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Release|iPhone.Build.0 = Release|iPhone
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{1394BB1B-6C7B-49DC-BE9C-001679BA03A5}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

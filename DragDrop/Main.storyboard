@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="249">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="234" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="141" width="374" height="30"/>
+                                <state key="normal" title="Touch Beispiele"/>
+                                <connections>
+                                    <segue id="541" destination="223" kind="show"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="235" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="198" width="374" height="30"/>
+                                <state key="normal" title="Eigene Geste erkennen"/>
+                                <connections>
+                                    <segue id="659" destination="230" kind="show"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="343" firstItem="234" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="71"/>
+                            <constraint id="344" firstItem="234" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="345" firstItem="234" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                            <constraint id="346" firstItem="235" firstAttribute="top" secondItem="234" secondAttribute="bottom" constant="27"/>
+                            <constraint id="347" firstItem="235" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="348" firstItem="235" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                        </constraints>
+                    </view>
+                    <navigationItem title="Drag &amp; Drop Beispiele" id="340" key="navigationItem"/>
+                    <connections>
+                        <outlet property="btnTouchSamples" destination="234" id="name-outlet-234"/>
+                        <outlet property="btnCustomGesture" destination="235" id="name-outlet-235"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <scene sceneID="222">
+            <objects>
+                <viewController id="223" sceneMemberID="viewController" customClass="TouchViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="220"/>
+                        <viewControllerLayoutGuide type="bottom" id="221"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="224">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="661" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="70" width="374" height="257"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touch the images below" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="662" translatesAutoresizingMaskIntoConstraints="NO">
+                                        <rect key="frame" x="8" y="27" width="358" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="663" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="TouchMe.png">
+                                        <rect key="frame" x="38" y="86" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="664" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="DoubleTapMe.png">
+                                        <rect key="frame" x="216" y="86" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint id="855" firstAttribute="height" constant="257"/>
+                                    <constraint id="864" firstItem="662" firstAttribute="leading" secondItem="661" secondAttribute="leading" constant="8"/>
+                                    <constraint id="865" firstAttribute="trailing" secondItem="662" secondAttribute="trailing" constant="8"/>
+                                    <constraint id="866" firstItem="662" firstAttribute="top" secondItem="661" secondAttribute="top" constant="27"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="665" translatesAutoresizingMaskIntoConstraints="NO" text="Drag the image below">
+                                <rect key="frame" x="20" y="358" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="666" translatesAutoresizingMaskIntoConstraints="NO" image="DragMe.png">
+                                <rect key="frame" x="157" y="430" width="100" height="100"/>
+                                <constraints>
+                                    <constraint id="862" firstAttribute="width" constant="100"/>
+                                    <constraint id="863" firstAttribute="height" constant="100"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Status&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="667" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="695" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint id="848" firstItem="661" firstAttribute="top" secondItem="220" secondAttribute="bottom"/>
+                            <constraint id="849" firstItem="661" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin"/>
+                            <constraint id="850" firstItem="661" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin"/>
+                            <constraint id="851" firstItem="661" firstAttribute="trailing" secondItem="224" secondAttribute="trailingMargin"/>
+                            <constraint id="852" firstItem="665" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin"/>
+                            <constraint id="853" firstItem="665" firstAttribute="top" secondItem="661" secondAttribute="bottom" constant="31"/>
+                            <constraint id="854" firstItem="665" firstAttribute="trailing" secondItem="224" secondAttribute="trailingMargin"/>
+                            <constraint id="857" firstItem="667" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin"/>
+                            <constraint id="858" firstItem="221" firstAttribute="top" secondItem="667" secondAttribute="bottom" constant="20"/>
+                            <constraint id="859" firstItem="667" firstAttribute="trailing" secondItem="224" secondAttribute="trailingMargin"/>
+                            <constraint id="860" firstItem="666" firstAttribute="top" secondItem="665" secondAttribute="bottom" constant="51"/>
+                            <constraint id="861" firstItem="666" firstAttribute="leading" secondItem="224" secondAttribute="leadingMargin" constant="137"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgTouch" destination="663" id="name-outlet-663"/>
+                        <outlet property="imgTap" destination="664" id="name-outlet-664"/>
+                        <outlet property="viewTouch" destination="661" id="name-outlet-661"/>
+                        <outlet property="imgDrag" destination="666" id="name-outlet-666"/>
+                        <outlet property="lblStatus" destination="667" id="name-outlet-667"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="225" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-2"/>
+        </scene>
+        <scene sceneID="229">
+            <objects>
+                <viewController id="230" sceneMemberID="viewController" customClass="CheckMarkViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="227"/>
+                        <viewControllerLayoutGuide type="bottom" id="228"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="231">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1821" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="CheckBox_Start.png">
+                                <rect key="frame" x="157" y="318" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="imgCheck" destination="1821" id="name-outlet-1821"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="232" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="557" y="817"/>
+        </scene>
+        <scene sceneID="248">
+            <objects>
+                <navigationController id="249" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="251">
+                        <rect key="frame" x="0.0" y="20" width="414" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue id="341" destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="252" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-587" y="-3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CheckBox_Start.png" width="98" height="98"/>
+        <image name="DoubleTapMe.png" width="100" height="100"/>
+        <image name="DragMe.png" width="100" height="100"/>
+        <image name="TouchMe.png" width="100" height="100"/>
+    </resources>
+</document>

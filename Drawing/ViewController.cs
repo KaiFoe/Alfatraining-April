@@ -53,6 +53,7 @@ namespace Drawing
             };
 
             CanvasView canvasView = new CanvasView();
+            
 
             contentView.Add(vertStackView);
             vertStackView.AddArrangedSubview(horizStackView);
@@ -101,7 +102,8 @@ namespace Drawing
                 Translucent = true
             };
 
-            UIFont font = UIFont.SystemFontOfSize(24);
+            //UIFont font = UIFont.SystemFontOfSize(24);
+            UIFont font = UIFont.FromName("Chalkduster", 24);
 
             UITextField txtColor = new UITextField
             {
@@ -117,7 +119,9 @@ namespace Drawing
                 InputView = thicknessPicker,
                 InputAccessoryView = toolbar,
                 Font = font
+                
             };
+            
 
             horizStackView.AddArrangedSubview(txtColor);
             horizStackView.AddArrangedSubview(txtThickness);
@@ -150,6 +154,7 @@ namespace Drawing
             colorModel.valueChanged += (semder, args) =>
             {
                 txtColor.Text = colorModel.SelectedItem.Name;
+                //canvasView.StrokeColor = UIColor.FromRGB(123, 123, 123).CGColor;
                 canvasView.StrokeColor = colorModel.SelectedItem.Value.CGColor;
             };
 
