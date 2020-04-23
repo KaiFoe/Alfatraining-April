@@ -16,6 +16,10 @@ namespace Location
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnChangeView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnEnd { get; set; }
 
         [Outlet]
@@ -30,8 +34,17 @@ namespace Location
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel lblTitle { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        MapKit.MKMapView mapView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnChangeView != null) {
+                btnChangeView.Dispose ();
+                btnChangeView = null;
+            }
+
             if (btnEnd != null) {
                 btnEnd.Dispose ();
                 btnEnd = null;
@@ -50,6 +63,11 @@ namespace Location
             if (lblTitle != null) {
                 lblTitle.Dispose ();
                 lblTitle = null;
+            }
+
+            if (mapView != null) {
+                mapView.Dispose ();
+                mapView = null;
             }
         }
     }
