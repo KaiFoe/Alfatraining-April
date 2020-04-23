@@ -33,6 +33,17 @@ namespace Location
             {
                 SearchResultsUpdater = searchUpdator
             };
+
+            //Formatierung der SearchBar
+            searchController.SearchBar.SizeToFit();
+            searchController.SearchBar.SearchBarStyle = UISearchBarStyle.Minimal;
+            searchController.SearchBar.Placeholder = "Bitte Suchwort eintragen";
+
+            searchController.HidesNavigationBarDuringPresentation = false;
+
+            DefinesPresentationContext = true;
+
+            NavigationItem.TitleView = searchController.SearchBar;
         }
     }
 }

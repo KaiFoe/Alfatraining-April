@@ -35,6 +35,8 @@ namespace Location
 
             cell.TextLabel.Text = MapItems[indexPath.Row].Name;
 
+            
+
             return cell;
         }
 

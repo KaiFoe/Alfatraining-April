@@ -11,12 +11,12 @@ using UIKit;
 
 namespace Location
 {
-    [Register ("MapViewController")]
-    partial class MapViewController
+    [Register ("TextViewController")]
+    partial class TextViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIView textView { get; set; }
+        UIKit.UITextView textView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
