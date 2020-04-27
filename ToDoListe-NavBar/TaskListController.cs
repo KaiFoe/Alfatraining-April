@@ -44,8 +44,10 @@ namespace ToDoListe_NavBar
             NavigationItem.SetRightBarButtonItems(buttons, true);
 
             //LongPress-Gesture zum Editieren des TaskItems
-            UILongPressGestureRecognizer longPressGestureRecognizer = new UILongPressGestureRecognizer(LongPress);
-            tableTasks.AddGestureRecognizer(longPressGestureRecognizer);
+
+            longPressGesture.AddTarget(this, new ObjCRuntime.Selector("LongPress"));
+            //UILongPressGestureRecognizer longPressGestureRecognizer = new UILongPressGestureRecognizer(LongPress);
+            tableTasks.AddGestureRecognizer(longPressGesture);
         }
 
         public void deleteAll(object sender, EventArgs args)

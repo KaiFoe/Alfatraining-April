@@ -112,6 +112,18 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Images.imageset\CheckBox_Unchecked.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Images.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Images.imageset\TouchMe.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Images.imageset\TouchMe_Touched.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -119,6 +131,7 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <InterfaceDefinition Include="EmptyStoryboard1.storyboard" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
@@ -148,9 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\DragMe.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\TouchMe.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\TouchMe_Touched.png" />

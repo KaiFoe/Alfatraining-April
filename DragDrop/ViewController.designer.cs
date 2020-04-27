@@ -22,10 +22,6 @@ namespace DragDrop
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnTouchSamples { get; set; }
 
-        [Action ("onClick:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void onClick (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (btnCustomGesture != null) {

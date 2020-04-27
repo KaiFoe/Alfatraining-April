@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragDrop", "DragDrop\DragDr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Location", "Location\Location.csproj", "{29260455-45E7-40C1-8005-E0590CC4C6F4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoPlayer", "VideoPlayer\VideoPlayer.csproj", "{871D99E4-94A1-41DD-9E1F-412A1CF78100}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhone = Debug|iPhone
@@ -165,6 +167,14 @@ Global
 		{29260455-45E7-40C1-8005-E0590CC4C6F4}.Release|iPhone.Build.0 = Release|iPhone
 		{29260455-45E7-40C1-8005-E0590CC4C6F4}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{29260455-45E7-40C1-8005-E0590CC4C6F4}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Debug|iPhone.Build.0 = Debug|iPhone
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Release|iPhone.ActiveCfg = Release|iPhone
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Release|iPhone.Build.0 = Release|iPhone
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{871D99E4-94A1-41DD-9E1F-412A1CF78100}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

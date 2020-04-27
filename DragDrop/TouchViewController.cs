@@ -22,6 +22,8 @@ namespace DragDrop
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+           
         }
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
